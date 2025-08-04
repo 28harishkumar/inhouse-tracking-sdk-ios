@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -60,6 +60,13 @@
 				9DF29DB6DF64A6B38AAFD7FF /* Frameworks */,
 				FF4F3A86B888AD06690B2E90 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		6881496E2E40C1C40019C89A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		9B0AF7EA4AAC5B40F886B02D /* InhouseTrackingSDKExample */ = {
@@ -133,8 +140,13 @@
 			);
 			mainGroup = 3AF8BFDF4F43876B14B87822;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6881496E2E40C1C40019C89A /* Products */;
+					ProjectRef = 001081F06A31279BB5993DD7 /* InhouseTrackingSDK.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9BF6577B2E6219DDA79E4F76 /* InhouseTrackingSDKExample */,
