@@ -3,164 +3,141 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A2B3C4D5E6F7890 /* InhouseTrackingSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7891 /* InhouseTrackingSDK.swift */; };
-		1A2B3C4D5E6F7892 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7893 /* Models.swift */; };
-		1A2B3C4D5E6F7894 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7895 /* StorageManager.swift */; };
-		1A2B3C4D5E6F7896 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7897 /* NetworkClient.swift */; };
-		1A2B3C4D5E6F7898 /* EventTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7899 /* EventTracker.swift */; };
-		1A2B3C4D5E6F789A /* ShortLinkDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F789B /* ShortLinkDetector.swift */; };
-		1A2B3C4D5E6F789C /* DeepLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F789D /* DeepLinkHandler.swift */; };
-		1A2B3C4D5E6F789E /* InstallReferrerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F789F /* InstallReferrerManager.swift */; };
+		04EF61627A1F68150D5410F3 /* DeepLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292E168E94990D81182D948 /* DeepLinkHandler.swift */; };
+		2AF3A868DF5AD0C4FE667982 /* TrackingSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FE51577020DBDD8F3C6F24 /* TrackingSDK.swift */; };
+		3506409C30CEEEF6A91A2060 /* ShortLinkDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C027C78F1D040A920ACA96 /* ShortLinkDetector.swift */; };
+		AC47F72C53F14A863FB75635 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1F625F177718F9F8480D4E /* StorageManager.swift */; };
+		AD9FD30E240D6AC2BABF5837 /* EventTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EA01712F21CF62872A20A /* EventTracker.swift */; };
+		CBDF5D72049A8F888743EDB3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFC3FD8081F9DC3B9F05E17 /* Models.swift */; };
+		ED469C081781E456689254B2 /* InstallReferrerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE57BFBD7846C7FD619238C /* InstallReferrerManager.swift */; };
+		EEA3E03A5593FA21EEC813BB /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E713E4D51B026433B9424D /* NetworkClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A2B3C4D5E6F7890 /* InhouseTrackingSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InhouseTrackingSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A2B3C4D5E6F7891 /* InhouseTrackingSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InhouseTrackingSDK.swift; sourceTree = "<group>"; };
-		1A2B3C4D5E6F7893 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		1A2B3C4D5E6F7895 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		1A2B3C4D5E6F7897 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
-		1A2B3C4D5E6F7899 /* EventTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTracker.swift; sourceTree = "<group>"; };
-		1A2B3C4D5E6F789B /* ShortLinkDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortLinkDetector.swift; sourceTree = "<group>"; };
-		1A2B3C4D5E6F789D /* DeepLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkHandler.swift; sourceTree = "<group>"; };
-		1A2B3C4D5E6F789F /* InstallReferrerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallReferrerManager.swift; sourceTree = "<group>"; };
+		2292E168E94990D81182D948 /* DeepLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkHandler.swift; sourceTree = "<group>"; };
+		277EA01712F21CF62872A20A /* EventTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTracker.swift; sourceTree = "<group>"; };
+		31E713E4D51B026433B9424D /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		4A117CE10FE197F90002C550 /* InhouseTrackingSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InhouseTrackingSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DE57BFBD7846C7FD619238C /* InstallReferrerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallReferrerManager.swift; sourceTree = "<group>"; };
+		66FE51577020DBDD8F3C6F24 /* TrackingSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingSDK.swift; sourceTree = "<group>"; };
+		85C027C78F1D040A920ACA96 /* ShortLinkDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortLinkDetector.swift; sourceTree = "<group>"; };
+		8BFC3FD8081F9DC3B9F05E17 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		AE1F625F177718F9F8480D4E /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		EFB667A11F8E7B467BD564A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFrameworksBuildPhase section */
-		1A2B3C4D5E6F788D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
 /* Begin PBXGroup section */
-		1A2B3C4D5E6F7887 = {
+		663A390997E29C7394786A4D = {
 			isa = PBXGroup;
 			children = (
-				1A2B3C4D5E6F7892 /* InhouseTrackingSDK */,
-				1A2B3C4D5E6F7891 /* Products */,
+				FB847BF36750B8915BBB2BCE /* InhouseTrackingSDK */,
+				BFF5C47BA50C4DB42581FC36 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1A2B3C4D5E6F7891 /* Products */ = {
+		BFF5C47BA50C4DB42581FC36 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1A2B3C4D5E6F7890 /* InhouseTrackingSDK.framework */,
+				4A117CE10FE197F90002C550 /* InhouseTrackingSDK.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1A2B3C4D5E6F7892 /* InhouseTrackingSDK */ = {
+		FB847BF36750B8915BBB2BCE /* InhouseTrackingSDK */ = {
 			isa = PBXGroup;
 			children = (
-				1A2B3C4D5E6F7891 /* InhouseTrackingSDK.swift */,
-				1A2B3C4D5E6F7893 /* Models.swift */,
-				1A2B3C4D5E6F7895 /* StorageManager.swift */,
-				1A2B3C4D5E6F7897 /* NetworkClient.swift */,
-				1A2B3C4D5E6F7899 /* EventTracker.swift */,
-				1A2B3C4D5E6F789B /* ShortLinkDetector.swift */,
-				1A2B3C4D5E6F789D /* DeepLinkHandler.swift */,
-				1A2B3C4D5E6F789F /* InstallReferrerManager.swift */,
+				2292E168E94990D81182D948 /* DeepLinkHandler.swift */,
+				277EA01712F21CF62872A20A /* EventTracker.swift */,
+				EFB667A11F8E7B467BD564A1 /* Info.plist */,
+				5DE57BFBD7846C7FD619238C /* InstallReferrerManager.swift */,
+				8BFC3FD8081F9DC3B9F05E17 /* Models.swift */,
+				31E713E4D51B026433B9424D /* NetworkClient.swift */,
+				85C027C78F1D040A920ACA96 /* ShortLinkDetector.swift */,
+				AE1F625F177718F9F8480D4E /* StorageManager.swift */,
+				66FE51577020DBDD8F3C6F24 /* TrackingSDK.swift */,
 			);
 			path = InhouseTrackingSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		1A2B3C4D5E6F788E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		1A2B3C4D5E6F788F /* InhouseTrackingSDK */ = {
+		3F8C4BC6CF0ECAAED6198CEB /* InhouseTrackingSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A2B3C4D5E6F78A0 /* Build configuration list for PBXNativeTarget "InhouseTrackingSDK" */;
+			buildConfigurationList = 30302DE4F5CDEEA7355D549E /* Build configuration list for PBXNativeTarget "InhouseTrackingSDK" */;
 			buildPhases = (
-				1A2B3C4D5E6F788C /* Sources */,
-				1A2B3C4D5E6F788E /* Headers */,
-				1A2B3C4D5E6F788D /* Frameworks */,
+				67947141DC2A118799E15317 /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = InhouseTrackingSDK;
+			packageProductDependencies = (
+			);
 			productName = InhouseTrackingSDK;
-			productReference = 1A2B3C4D5E6F7890 /* InhouseTrackingSDK.framework */;
+			productReference = 4A117CE10FE197F90002C550 /* InhouseTrackingSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1A2B3C4D5E6F7888 /* Project object */ = {
+		5769D7DA161DB512A182D564 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1500;
-				TargetAttributes = {
-					1A2B3C4D5E6F788F = {
-						CreatedOnToolsVersion = 15.0;
-					};
-				};
 			};
-			buildConfigurationList = 1A2B3C4D5E6F788B /* Build configuration list for PBXProject "InhouseTrackingSDK" */;
+			buildConfigurationList = B401FD5480C959B3B319A7F2 /* Build configuration list for PBXProject "InhouseTrackingSDK" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
-			mainGroup = 1A2B3C4D5E6F7887;
-			productRefGroup = 1A2B3C4D5E6F7891 /* Products */;
+			mainGroup = 663A390997E29C7394786A4D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1A2B3C4D5E6F788F /* InhouseTrackingSDK */,
+				3F8C4BC6CF0ECAAED6198CEB /* InhouseTrackingSDK */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1A2B3C4D5E6F788C /* Sources */ = {
+		67947141DC2A118799E15317 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A2B3C4D5E6F7892 /* Models.swift in Sources */,
-				1A2B3C4D5E6F7894 /* StorageManager.swift in Sources */,
-				1A2B3C4D5E6F7896 /* NetworkClient.swift in Sources */,
-				1A2B3C4D5E6F7898 /* EventTracker.swift in Sources */,
-				1A2B3C4D5E6F789A /* ShortLinkDetector.swift in Sources */,
-				1A2B3C4D5E6F789C /* DeepLinkHandler.swift in Sources */,
-				1A2B3C4D5E6F789E /* InstallReferrerManager.swift in Sources */,
-				1A2B3C4D5E6F7890 /* InhouseTrackingSDK.swift in Sources */,
+				04EF61627A1F68150D5410F3 /* DeepLinkHandler.swift in Sources */,
+				AD9FD30E240D6AC2BABF5837 /* EventTracker.swift in Sources */,
+				ED469C081781E456689254B2 /* InstallReferrerManager.swift in Sources */,
+				CBDF5D72049A8F888743EDB3 /* Models.swift in Sources */,
+				EEA3E03A5593FA21EEC813BB /* NetworkClient.swift in Sources */,
+				3506409C30CEEEF6A91A2060 /* ShortLinkDetector.swift in Sources */,
+				AC47F72C53F14A863FB75635 /* StorageManager.swift in Sources */,
+				2AF3A868DF5AD0C4FE667982 /* TrackingSDK.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1A2B3C4D5E6F789E /* Debug */ = {
+		1082CF2409821453DEC5FE86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -190,14 +167,13 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"DEBUG=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -205,25 +181,27 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		1A2B3C4D5E6F789F /* Release */ = {
+		86A7EE68878BA76FFD682978 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -253,8 +231,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -262,100 +239,92 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		1A2B3C4D5E6F78A1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = InhouseTrackingSDK;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tryinhouse.InhouseTrackingSDK;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		1A2B3C4D5E6F78A2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = InhouseTrackingSDK;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tryinhouse.InhouseTrackingSDK;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
+		};
+		CE16C9A6EE09F7521592CCBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = InhouseTrackingSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.tryinhouse.InhouseTrackingSDK;
+				PRODUCT_NAME = InhouseTrackingSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		EF94C44D178389543294235A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = InhouseTrackingSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.tryinhouse.InhouseTrackingSDK;
+				PRODUCT_NAME = InhouseTrackingSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1A2B3C4D5E6F788B /* Build configuration list for PBXProject "InhouseTrackingSDK" */ = {
+		30302DE4F5CDEEA7355D549E /* Build configuration list for PBXNativeTarget "InhouseTrackingSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1A2B3C4D5E6F789E /* Debug */,
-				1A2B3C4D5E6F789F /* Release */,
+				EF94C44D178389543294235A /* Debug */,
+				CE16C9A6EE09F7521592CCBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		1A2B3C4D5E6F78A0 /* Build configuration list for PBXNativeTarget "InhouseTrackingSDK" */ = {
+		B401FD5480C959B3B319A7F2 /* Build configuration list for PBXProject "InhouseTrackingSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1A2B3C4D5E6F78A1 /* Debug */,
-				1A2B3C4D5E6F78A2 /* Release */,
+				1082CF2409821453DEC5FE86 /* Debug */,
+				86A7EE68878BA76FFD682978 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1A2B3C4D5E6F7888 /* Project object */;
-} 
+	rootObject = 5769D7DA161DB512A182D564 /* Project object */;
+}

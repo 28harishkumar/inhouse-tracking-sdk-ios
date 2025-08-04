@@ -1,0 +1,72 @@
+name: InhouseTrackingSDKExample
+options:
+  bundleIdPrefix: co.tryinhouse
+  deploymentTarget:
+    iOS: "14.0"
+  developmentLanguage: en
+  xcodeVersion: "15.0"
+
+settings:
+  SWIFT_VERSION: "5.0"
+  IPHONEOS_DEPLOYMENT_TARGET: "14.0"
+
+targets:
+  InhouseTrackingSDKExample:
+    type: application
+    platform: iOS
+    deploymentTarget: "14.0"
+    sources:
+      - InhouseTrackingSDKExample
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: co.tryinhouse.InhouseTrackingSDKExample
+      PRODUCT_NAME: InhouseTrackingSDKExample
+      SWIFT_VERSION: "5.0"
+      IPHONEOS_DEPLOYMENT_TARGET: "14.0"
+    dependencies:
+      - framework: ../InhouseTrackingSDK.xcodeproj
+    info:
+      path: InhouseTrackingSDKExample/Info.plist
+      properties:
+        CFBundleDisplayName: InhouseTrackingSDKExample
+        CFBundleIdentifier: co.tryinhouse.InhouseTrackingSDKExample
+        CFBundleName: InhouseTrackingSDKExample
+        CFBundleVersion: "1.0.0"
+        CFBundleShortVersionString: "1.0.0"
+        CFBundlePackageType: APPL
+        CFBundleSignature: "????"
+        CFBundleExecutable: InhouseTrackingSDKExample
+        CFBundleInfoDictionaryVersion: "6.0"
+        LSRequiresIPhoneOS: true
+        UILaunchStoryboardName: LaunchScreen
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        MinimumOSVersion: "14.0"
+
+schemes:
+  InhouseTrackingSDKExample:
+    build:
+      targets:
+        InhouseTrackingSDKExample: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release

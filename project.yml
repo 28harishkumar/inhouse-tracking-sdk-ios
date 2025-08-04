@@ -1,0 +1,55 @@
+name: InhouseTrackingSDK
+options:
+  bundleIdPrefix: co.tryinhouse
+  deploymentTarget:
+    iOS: "14.0"
+  developmentLanguage: en
+  xcodeVersion: "15.0"
+
+settings:
+  SWIFT_VERSION: "5.0"
+  IPHONEOS_DEPLOYMENT_TARGET: "14.0"
+  MACOSX_DEPLOYMENT_TARGET: "11.0"
+
+targets:
+  InhouseTrackingSDK:
+    type: framework
+    platform: iOS
+    deploymentTarget: "14.0"
+    sources:
+      - InhouseTrackingSDK
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: co.tryinhouse.InhouseTrackingSDK
+      PRODUCT_NAME: InhouseTrackingSDK
+      SWIFT_VERSION: "5.0"
+      IPHONEOS_DEPLOYMENT_TARGET: "14.0"
+    info:
+      path: InhouseTrackingSDK/Info.plist
+      properties:
+        CFBundleDisplayName: InhouseTrackingSDK
+        CFBundleIdentifier: co.tryinhouse.InhouseTrackingSDK
+        CFBundleName: InhouseTrackingSDK
+        CFBundleVersion: "1.0.0"
+        CFBundleShortVersionString: "1.0.0"
+        CFBundlePackageType: FMWK
+        CFBundleSignature: "????"
+        CFBundleExecutable: InhouseTrackingSDK
+        CFBundleInfoDictionaryVersion: "6.0"
+        NSPrincipalClass: ""
+        MinimumOSVersion: "14.0"
+
+schemes:
+  InhouseTrackingSDK:
+    build:
+      targets:
+        InhouseTrackingSDK: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
