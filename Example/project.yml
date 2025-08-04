@@ -4,7 +4,7 @@ options:
   deploymentTarget:
     iOS: "14.0"
   developmentLanguage: en
-  xcodeVersion: "15.0"
+  xcodeVersion: "14.3"
 
 settings:
   SWIFT_VERSION: "5.0"
@@ -22,8 +22,6 @@ targets:
       PRODUCT_NAME: InhouseTrackingSDKExample
       SWIFT_VERSION: "5.0"
       IPHONEOS_DEPLOYMENT_TARGET: "14.0"
-    dependencies:
-      - framework: ../InhouseTrackingSDK.xcodeproj
     info:
       path: InhouseTrackingSDKExample/Info.plist
       properties:

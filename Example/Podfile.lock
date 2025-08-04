@@ -1,0 +1,22 @@
+PODS:
+  - InhouseTrackingSDK (1.0.0)
+
+DEPENDENCIES:
+  - InhouseTrackingSDK (from `https://github.com/28harishkumar/inhouse-tracking-sdk-ios.git`, tag `v1.0.0`)
+
+EXTERNAL SOURCES:
+  InhouseTrackingSDK:
+    :git: https://github.com/28harishkumar/inhouse-tracking-sdk-ios.git
+    :tag: v1.0.0
+
+CHECKOUT OPTIONS:
+  InhouseTrackingSDK:
+    :git: https://github.com/28harishkumar/inhouse-tracking-sdk-ios.git
+    :tag: v1.0.0
+
+SPEC CHECKSUMS:
+  InhouseTrackingSDK: 804dbc1aa5f721b28d400bcefff003fd1554ddb7
+
+PODFILE CHECKSUM: 49c8ffcbbe3650ba5ec8e341f03127215d3dc8d6
+
+COCOAPODS: 1.16.2

@@ -1,0 +1,11 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '14.0'
+
+target 'InhouseTrackingSDKExample' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for InhouseTrackingSDKExample
+  pod 'InhouseTrackingSDK', :git => 'https://github.com/28harishkumar/inhouse-tracking-sdk-ios.git', :tag => 'v1.0.0'
+
+end 
