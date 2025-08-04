@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
   spec.homepage     = "https://github.com/28harishkumar/inhouse-tracking-sdk-ios"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author       = { "TryInHouse" => "support@tryinhouse.com" }
-  spec.platform     = :ios, "13.0"
+  spec.platform     = :ios, "14.0"
   spec.source       = { :git => ".", :tag => "v#{spec.version}" }
 
   spec.source_files = "InhouseTrackingSDK/*.swift"

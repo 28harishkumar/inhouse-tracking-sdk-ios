@@ -86,7 +86,7 @@ import Foundation
     }
     
     // Custom encoding for extra field since it's [String: Any]
-    public override func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
         try container.encode(eventType, forKey: .eventType)

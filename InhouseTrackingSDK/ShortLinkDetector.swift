@@ -22,9 +22,9 @@ import os.log
         }
         
         let host = urlObj.host?.lowercased() ?? ""
-        let isShortLink = host.contains(shortLinkDomain.lowercased())
+        let isShortLink = host.contains(self.shortLinkDomain.lowercased())
         
-        logger.debug("URL host: \(host), shortLinkDomain: \(shortLinkDomain), isShortLink: \(isShortLink)")
+        logger.debug("URL host: \(host), shortLinkDomain: \(self.shortLinkDomain), isShortLink: \(isShortLink)")
         return isShortLink
     }
     
@@ -39,7 +39,7 @@ import os.log
         let host = urlObj.host?.lowercased() ?? ""
         
         // Check if this is a shortlink
-        if host.contains(shortLinkDomain.lowercased()) {
+        if host.contains(self.shortLinkDomain.lowercased()) {
             logger.debug("Shortlink extracted: \(url)")
             return url
         }
@@ -89,7 +89,7 @@ import os.log
         
         // Check for utm_source with shortlink domain
         if let utmSource = extractParameter(from: referrer, parameterName: "utm_source"),
-           utmSource.contains(shortLinkDomain) {
+           utmSource.contains(self.shortLinkDomain) {
             logger.debug("Shortlink found in utm_source: \(utmSource)")
             return utmSource
         }
