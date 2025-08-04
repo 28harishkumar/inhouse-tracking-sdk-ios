@@ -1,4 +1,5 @@
 import UIKit
+import InhouseTrackingSDK
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

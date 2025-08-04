@@ -1,4 +1,5 @@
 import UIKit
+import InhouseTrackingSDK
 
 class ViewController: UIViewController {
     
@@ -118,7 +119,7 @@ class ViewController: UIViewController {
     }
     
     @objc private func trackAppOpenFromShortLink() {
-        let shortLink = "https://tryinhouse.com/test123"
+        let shortLink = "https://new-projec.tryinhouse.com/test123"
         InhouseTrackingSDK.shared.trackAppOpenFromShortLink(shortLink: shortLink) { response in
             DispatchQueue.main.async {
                 self.showAlert(title: "Track App Open from ShortLink", message: response)
@@ -135,7 +136,7 @@ class ViewController: UIViewController {
     }
     
     @objc private func trackSessionStartFromShortLink() {
-        let shortLink = "https://tryinhouse.com/test123"
+        let shortLink = "https://new-projec.tryinhouse.com/test123"
         InhouseTrackingSDK.shared.trackSessionStartFromShortLink(shortLink: shortLink) { response in
             DispatchQueue.main.async {
                 self.showAlert(title: "Track Session Start from ShortLink", message: response)
@@ -144,7 +145,7 @@ class ViewController: UIViewController {
     }
     
     @objc private func trackShortLinkClick() {
-        let shortLink = "https://tryinhouse.com/test123"
+        let shortLink = "https://new-projec.tryinhouse.com/test123"
         let deepLink = "myapp://test?param=value"
         InhouseTrackingSDK.shared.trackShortLinkClick(shortLink: shortLink, deepLink: deepLink) { response in
             DispatchQueue.main.async {
@@ -154,7 +155,7 @@ class ViewController: UIViewController {
     }
     
     @objc private func trackAppInstallFromShortLink() {
-        let shortLink = "https://tryinhouse.com/test123"
+        let shortLink = "https://new-projec.tryinhouse.com/test123"
         InhouseTrackingSDK.shared.trackAppInstallFromShortLink(shortLink: shortLink) { response in
             DispatchQueue.main.async {
                 self.showAlert(title: "Track App Install from ShortLink", message: response)
@@ -184,7 +185,7 @@ class ViewController: UIViewController {
     }
     
     @objc private func testDeepLink() {
-        let testURL = URL(string: "https://tryinhouse.com/test123?utm_source=test&utm_medium=app")!
+        let testURL = URL(string: "https://new-projec.tryinhouse.com/test123?utm_source=test&utm_medium=app")!
         InhouseTrackingSDK.shared.onNewURL(testURL)
         showAlert(title: "Test Deep Link", message: "Deep link test triggered")
     }

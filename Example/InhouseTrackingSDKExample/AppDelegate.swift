@@ -1,4 +1,5 @@
 import UIKit
+import InhouseTrackingSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -7,9 +8,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Initialize the Tracking SDK
         InhouseTrackingSDK.shared.initialize(
-            projectId: "your_project_id",
-            projectToken: "your_project_token",
-            shortLinkDomain: "tryinhouse.com",
+            projectId: "51225fce-013c-4dbe-83f8-f50f625ac273",
+            projectToken: "k4H_d7U3qbc_lukp4o9gnfxu4nSvNEmdh6hp1Ghsghs",
+            shortLinkDomain: "new-projec.tryinhouse.com",
             serverUrl: "https://api.tryinhouse.com",
             enableDebugLogging: true
         ) { callbackType, jsonData in

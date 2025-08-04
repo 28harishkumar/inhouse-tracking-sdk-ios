@@ -32,7 +32,7 @@
 
 /* Begin PBXFileReference section */
 		001081F06A31279BB5993DD7 /* InhouseTrackingSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = InhouseTrackingSDK.xcodeproj; path = ../InhouseTrackingSDK.xcodeproj; sourceTree = "<group>"; };
-		2C75B76F7A3D11D097240108 /* InhouseTrackingSDKExample.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = InhouseTrackingSDKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C75B76F7A3D11D097240108 /* InhouseTrackingSDKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InhouseTrackingSDKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D9B861EE943FA9EB1D9B148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F7A14578D3F0BF5E7233124 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5A1DC1A98239B59A3C8A944E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1640;
 			};
 			buildConfigurationList = 0575FB73837EEB99FF3EB6B8 /* Build configuration list for PBXProject "InhouseTrackingSDKExample" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -251,6 +251,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -314,6 +315,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

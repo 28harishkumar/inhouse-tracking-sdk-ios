@@ -32,6 +32,90 @@ A comprehensive iOS SDK for tracking app installs, sessions, and user interactio
 pod 'InhouseTrackingSDK', '~> 1.0'
 ```
 
+## Setup and Configuration
+
+### Prerequisites
+
+1. **Apple Developer Account**: Required for Associated Domains capability
+2. **Server Access**: Ability to configure your domain's `/.well-known/apple-app-site-association` file
+
+### Complete Setup Steps
+
+#### Step 1: Add SDK to Your Project
+
+1. **Add the SDK files** to your Xcode project
+2. **Import the SDK**: `import InhouseTrackingSDK`
+
+#### Step 2: Configure URL Schemes
+
+Add to your `Info.plist`:
+
+```xml
+<key>CFBundleURLTypes</key>
+<array>
+    <dict>
+        <key>CFBundleURLName</key>
+        <string>YOUR_BUNDLE_IDENTIFIER_LIKE_co.tryinhouse.InhouseTrackingSDKExample</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+            <string>YOUR_SCHEME_LIKE_inhouse-tracking</string>
+        </array>
+    </dict>
+</array>
+```
+
+#### Step 3: Configure Universal Links
+
+Add to your `Info.plist`:
+
+```xml
+<key>com.apple.developer.associated-domains</key>
+<array>
+    <string>applinks:YOUR_SHORT_LINK_SUB_DOMAIN.tryinhouse.co</string>
+</array>
+```
+
+#### Step 4: Enable Associated Domains Capability
+
+1. **In Apple Developer Portal**:
+
+   - Go to Certificates, Identifiers & Profiles
+   - Select your App ID
+   - Enable "Associated Domains" capability
+   - Download updated provisioning profile
+
+2. **In Xcode**:
+   - Select your target
+   - Go to "Signing & Capabilities"
+   - Click "+ Capability"
+   - Add "Associated Domains"
+   - Add your domains
+
+#### Step 5: Configure Server
+
+Create `/.well-known/apple-app-site-association` on your server:
+
+```json
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAM_ID.YOUR_BUNDLE_INDTIFIER_LINK_co.tryinhouse.InhouseTrackingSDKExample",
+        "paths": ["*"]
+      }
+    ]
+  }
+}
+```
+
+**Server Requirements**:
+
+- HTTPS only
+- No authentication required
+- `Content-Type: application/json`
+- Accessible at `https://yourdomain.com/.well-known/apple-app-site-association`
+
 ## Quick Start
 
 ### 1. Initialize the SDK
@@ -194,7 +278,69 @@ Add URL schemes to your `Info.plist`:
 
 ### Universal Links
 
-For Universal Links, add the associated domains capability in your app's entitlements.
+For Universal Links, you need to configure both your app and server:
+
+#### 1. App Configuration
+
+Add associated domains to your `Info.plist`:
+
+```xml
+<key>com.apple.developer.associated-domains</key>
+<array>
+    <string>applinks:YOUR_SHORT_LINK_SUB_DOMAIN.tryinhouse.com</string>
+</array>
+```
+
+#### 2. Apple Developer Account Setup
+
+1. **Enable Associated Domains Capability**:
+
+   - Go to [Apple Developer Portal](https://developer.apple.com/account/)
+   - Navigate to Certificates, Identifiers & Profiles
+   - Select your App ID
+   - Enable "Associated Domains" capability
+   - Update your provisioning profile
+
+2. **Add Associated Domains to Xcode**:
+   - Open your project in Xcode
+   - Select your target
+   - Go to "Signing & Capabilities"
+   - Click "+ Capability"
+   - Add "Associated Domains"
+   - Add your domains: `applinks:YOUR_SHORT_LINK_SUB_DOMAIN.tryinhouse.com`
+
+#### 3. Server Configuration
+
+Your server needs to serve an `apple-app-site-association` file at `/.well-known/apple-app-site-association`:
+
+```json
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAM_ID.co.tryinhouse.InhouseTrackingSDKExample",
+        "paths": ["*"]
+      }
+    ]
+  }
+}
+```
+
+**Important Notes**:
+
+- Replace `TEAM_ID` with your actual Apple Team ID
+- Replace `co.tryinhouse.InhouseTrackingSDKExample` with your actual bundle identifier
+- The file must be served over HTTPS
+- The file must be accessible without authentication
+- The file must have `Content-Type: application/json`
+
+#### 4. Testing Universal Links
+
+1. **Build and install your app** on a device (Universal Links don't work in simulator)
+2. **Test with Safari**: Open `https://tryinhouse.com/your-path` in Safari
+3. **Test with other apps**: Share links from other apps to your app
+4. **Verify in Settings**: Go to Settings > General > About > Legal & Regulatory > Universal Links
 
 ## Data Models
 
@@ -229,6 +375,53 @@ public class Event: NSObject, Codable {
     public let ipAddress: String?
 }
 ```
+
+## Testing Deep Links
+
+### Testing URL Schemes
+
+Test custom URL schemes in simulator or device:
+
+```bash
+# Test in simulator
+xcrun simctl openurl booted "inhouse-tracking://test?param=value"
+
+# Test on device (replace UDID with your device UDID)
+xcrun simctl openurl UDID "inhouse-tracking://test?param=value"
+```
+
+### Testing Universal Links
+
+1. **On Device Only** (Universal Links don't work in simulator):
+
+   - Build and install your app on a physical device
+   - Open Safari and navigate to `https://tryinhouse.com/your-path`
+   - The app should open automatically
+
+2. **Test from Other Apps**:
+
+   - Share a link from any app (Messages, Mail, etc.)
+   - The link should open your app if it matches your domain
+
+3. **Verify Universal Links**:
+   - Go to Settings > General > About > Legal & Regulatory > Universal Links
+   - Your app should appear in the list
+
+### Debugging Universal Links
+
+1. **Check Associated Domains**:
+
+   - In Xcode, verify Associated Domains capability is added
+   - Check that your domains are listed correctly
+
+2. **Verify Server Configuration**:
+
+   - Test your `apple-app-site-association` file: `https://yourdomain.com/.well-known/apple-app-site-association`
+   - Ensure it returns valid JSON with correct `Content-Type`
+
+3. **Check Apple's Validation**:
+   - Apple validates your `apple-app-site-association` file
+   - Check Apple's validation tool: https://search.developer.apple.com/appsearch-validation-tool/
 
 ## Example App
 
