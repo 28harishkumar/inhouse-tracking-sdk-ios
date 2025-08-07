@@ -6,6 +6,7 @@ target 'InhouseTrackingSDKExample' do
   use_frameworks!
 
   # Pods for InhouseTrackingSDKExample
-  pod 'InhouseTrackingSDK', :git => 'https://github.com/28harishkumar/inhouse-tracking-sdk-ios.git', :tag => 'v1.0.0'
+  # pod 'InhouseTrackingSDK', :git => 'https://github.com/28harishkumar/inhouse-tracking-sdk-ios.git', :tag => 'v1.0.0'
+  pod 'InhouseTrackingSDK', :path => '../'
 
 end 
