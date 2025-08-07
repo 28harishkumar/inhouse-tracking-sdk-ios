@@ -87,12 +87,6 @@ import CoreTelephony
         } else {
             callback(nil)
         }
-        } else if #available(iOS 14.0, *) {
-            // Try alternative StoreKit attribution for iOS 14-16.0
-            tryAlternativeAttribution(callback: callback)
-        } else {
-            callback(nil)
-        }
     }
     
     /// Alternative attribution method for iOS versions that don't support attributionToken
