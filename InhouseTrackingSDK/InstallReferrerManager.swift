@@ -80,18 +80,22 @@ import CoreTelephony
         logger.debug("getAppStoreReferrer called")
         if #available(iOS 16.0, *) {
             Task {
+                // SKAdNetwork.attributionToken() can throw errors, so we need proper error handling
+                let attribution: String
                 do {
-                    // Use SKAdNetwork.attributionToken() for iOS 16+
-                    // let attribution = try await SKAdNetwork.attributionToken()
-                    // if !attribution.isEmpty {
-                    //     logger.debug("SKAdNetwork attribution token found")
-                    //     callback("skadnetwork_token=\(attribution)")
-                    //     return
-                    // }
+                    attribution = try await SKAdNetwork.attributionToken()
                 } catch {
                     logger.error("Failed to get SKAdNetwork attribution token: \(error.localizedDescription)")
+                    callback(nil)
+                    return
                 }
-                callback(nil)
+                
+                if !attribution.isEmpty {
+                    logger.debug("SKAdNetwork attribution token found")
+                    callback("skadnetwork_token=\(attribution)")
+                } else {
+                    callback(nil)
+                }
             }
         } else {
             callback(nil)
@@ -222,13 +226,79 @@ import CoreTelephony
     }
     
     /// Helper to get carrier name (if available)
+    /// Uses multiple fallback strategies to get carrier information across different iOS versions
     private func getCarrierName() -> String? {
         #if canImport(CoreTelephony)
         let networkInfo = CTTelephonyNetworkInfo()
-        if let carrier = networkInfo.serviceSubscriberCellularProviders?.values.first {
-            return carrier.carrierName
+        
+        // Use different strategies based on iOS version to avoid deprecation warnings
+        if #available(iOS 16.0, *) {
+            // For iOS 16+, only use non-deprecated APIs
+            return getCarrierNameSafely(networkInfo)
+        } else {
+            // For iOS < 16, use full functionality
+            return getCarrierNameLegacy(networkInfo)
         }
         #endif
+        return nil
+    }
+    
+    /// Safe carrier name detection for iOS 16+ (avoids deprecated APIs)
+    private func getCarrierNameSafely(_ networkInfo: CTTelephonyNetworkInfo) -> String? {
+        // Only use subscriberCellularProvider which is not deprecated
+        if let carrier = networkInfo.subscriberCellularProvider {
+            logger.debug("Cellular provider detected")
+            return "Cellular Network Available"
+        }
+        return nil
+    }
+    
+    /// Full carrier name detection for iOS versions before 16
+    private func getCarrierNameLegacy(_ networkInfo: CTTelephonyNetworkInfo) -> String? {
+        // Strategy 1: Try subscriberCellularProvider (legacy)
+        if let carrier = networkInfo.subscriberCellularProvider,
+           let name = carrier.carrierName,
+           !name.isEmpty,
+           name != "--",
+           name != "Unknown" {
+            logger.debug("Found carrier name from legacy API: \(name)")
+            return name
+        }
+        
+        // Strategy 2: Try serviceSubscriberCellularProviders (iOS 12+)
+        if #available(iOS 12.0, *) {
+            if let carriers = networkInfo.serviceSubscriberCellularProviders {
+                for carrier in carriers.values {
+                    if let name = carrier.carrierName,
+                       !name.isEmpty,
+                       name != "--",
+                       name != "Unknown" {
+                        logger.debug("Found carrier name: \(name)")
+                        return name
+                    }
+                }
+            }
+            
+            // Strategy 3: Try MCC/MNC approach
+            if let carriers = networkInfo.serviceSubscriberCellularProviders {
+                for carrier in carriers.values {
+                    if let mcc = carrier.mobileCountryCode,
+                       let mnc = carrier.mobileNetworkCode,
+                       !mcc.isEmpty,
+                       !mnc.isEmpty {
+                        let carrierCode = "\(mcc)-\(mnc)"
+                        logger.debug("Found carrier code: \(carrierCode)")
+                        return carrierCode
+                    }
+                }
+            }
+        }
+        
+        // Strategy 4: Final fallback
+        if networkInfo.subscriberCellularProvider != nil {
+            return "Unknown Carrier"
+        }
+        
         return nil
     }
     
