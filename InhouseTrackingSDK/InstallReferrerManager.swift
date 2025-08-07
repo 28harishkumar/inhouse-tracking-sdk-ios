@@ -232,8 +232,9 @@ import CoreTelephony
         
         // Method 1: Check network reachability using URLSession
         return checkNetworkTypeAlternative()
-        #endif
+        #else
         return nil
+        #endif
     }
     
     /// Alternative network type detection that doesn't use deprecated CoreTelephony APIs
