@@ -14,6 +14,12 @@ Pod::Spec.new do |spec|
 
   spec.source_files = "InhouseTrackingSDK/*.swift"
   spec.swift_version = "5.0"
+  
+  # Enable Swift-to-Objective-C bridging
+  spec.pod_target_xcconfig = {
+    'SWIFT_INSTALL_OBJC_HEADER' => 'YES',
+    'DEFINES_MODULE' => 'YES'
+  }
 
   spec.frameworks = "Foundation", "UIKit", "AdSupport", "AppTrackingTransparency", "StoreKit"
   spec.weak_frameworks = "CoreTelephony"
