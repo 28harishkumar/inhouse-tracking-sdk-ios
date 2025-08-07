@@ -79,22 +79,14 @@ import CoreTelephony
     private func getAppStoreReferrer(callback: @escaping (String?) -> Void) {
         logger.debug("getAppStoreReferrer called")
         
-        // SKAdNetwork.attributionToken() is only available in iOS 16.1+, not iOS 16.0
-        if #available(iOS 16.1, *) {
-            Task {
-                do {
-                    let attribution = try await SKAdNetwork.attributionToken()
-                    if !attribution.isEmpty {
-                        logger.debug("SKAdNetwork attribution token found")
-                        callback("skadnetwork_token=\(attribution)")
-                    } else {
-                        callback(nil)
-                    }
-                } catch {
-                    logger.error("Failed to get SKAdNetwork attribution token: \(error.localizedDescription)")
-                    callback(nil)
-                }
-            }
+        // SKAdNetwork attribution is not available via public API
+        // We'll use alternative methods for attribution
+        if #available(iOS 14.0, *) {
+            // Try alternative StoreKit attribution for iOS 14+
+            tryAlternativeAttribution(callback: callback)
+        } else {
+            callback(nil)
+        }
         } else if #available(iOS 14.0, *) {
             // Try alternative StoreKit attribution for iOS 14-16.0
             tryAlternativeAttribution(callback: callback)
