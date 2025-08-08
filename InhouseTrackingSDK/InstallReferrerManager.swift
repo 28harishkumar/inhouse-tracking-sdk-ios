@@ -179,7 +179,7 @@ import CoreTelephony
         info["uptime"] = ProcessInfo.processInfo.systemUptime
         
         // Send to remote API
-        guard let url = URL(string: "https://api.tryinhouse.co/api/check-fingureprinting") else {
+        guard let url = URL(string: "https://api.tryinhouse.co/v1/api/ios/check-fingureprinting") else {
             logger.error("Invalid fingerprinting API URL")
             callback(nil)
             return

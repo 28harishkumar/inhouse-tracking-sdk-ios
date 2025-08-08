@@ -24,7 +24,7 @@ import os.log
         let event = createEvent(eventType: eventType, shortLink: shortLink)
         logger.debug("Event created: \(event)")
         
-        sendEvent(event) { responseJson in
+        sendEvent(event, shortLink: shortLink) { responseJson in
             self.logger.debug("trackEvent callback: \(responseJson)")
             completion?(responseJson)
         }
@@ -36,7 +36,7 @@ import os.log
         let event = createEvent(eventType: "short_link_click", shortLink: shortLink, deepLink: deepLink)
         logger.debug("Event created: \(event)")
         
-        sendEvent(event) { responseJson in
+        sendEvent(event, shortLink: shortLink) { responseJson in
             self.logger.debug("trackShortLinkClick callback: \(responseJson)")
             completion?(responseJson)
         }
@@ -59,7 +59,7 @@ import os.log
             let event = self.createEvent(eventType: "app_install", shortLink: shortLink, additionalData: installData)
             self.logger.debug("Event created: \(event)")
             
-            self.sendEvent(event) { responseJson in
+            self.sendEvent(event, shortLink: shortLink) { responseJson in
                 self.logger.debug("trackAppInstall callback: \(responseJson)")
                 completion?(responseJson)
             }
@@ -76,7 +76,7 @@ import os.log
         let event = createEvent(eventType: eventType, shortLink: shortLink, additionalData: additionalData)
         logger.debug("Event created: \(event)")
         
-        sendEvent(event) { responseJson in
+        sendEvent(event, shortLink: shortLink) { responseJson in
             self.logger.debug("trackCustomEvent callback: \(responseJson)")
             completion?(responseJson)
         }
@@ -127,8 +127,8 @@ import os.log
         )
     }
     
-    private func sendEvent(_ event: Event, completion: @escaping (String) -> Void) {
-        networkClient.sendEvent(event) { responseJson in
+    private func sendEvent(_ event: Event, shortLink: String?, completion: @escaping (String) -> Void) {
+        networkClient.sendEvent(event, shortLink: shortLink) { responseJson in
             completion(responseJson)
         }
     }

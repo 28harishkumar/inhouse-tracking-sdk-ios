@@ -12,8 +12,8 @@ COMMIT_MESSAGE="$1"
 git add .
 git commit -m "$COMMIT_MESSAGE"
 git push origin main
-# git tag -d v1.0.4
-git tag v1.0.4
-git push origin v1.0.4 --force
+# git tag -d v1.0.5
+git tag v1.0.5
+git push origin v1.0.5 --force
 pod cache clean --all
 pod spec lint InhouseTrackingSDK.podspec --use-libraries

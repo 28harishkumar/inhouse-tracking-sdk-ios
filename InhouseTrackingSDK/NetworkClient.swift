@@ -20,14 +20,14 @@ import os.log
     
     // MARK: - Event Tracking
     
-    @objc public func sendEvent(_ event: Event, completion: @escaping (String) -> Void) {
+    @objc public func sendEvent(_ event: Event, shortLink: String?, completion: @escaping (String) -> Void) {
         logger.debug("sendEvent called with eventType=\(event.eventType), projectId=\(event.projectId), projectToken=\(event.projectToken)")
         
         do {
             let jsonData = try JSONEncoder().encode(event)
             let jsonString = String(data: jsonData, encoding: .utf8) ?? "{}"
             
-            guard let url = buildEventURL() else {
+            guard let url = buildEventURL(shortLink: shortLink) else {
                 logger.error("Failed to build URL for event registration")
                 completion("{\"status\":\"error\",\"message\":\"Invalid URL\"}")
                 return
@@ -124,12 +124,16 @@ import os.log
     
     // MARK: - Private Methods
     
-    private func buildEventURL() -> URL? {
+    private func buildEventURL(shortLink: String?) -> URL? {
         var components = URLComponents(string: "\(config.serverUrl)/api/clicks/register_event")
-        components?.queryItems = [
+        var items: [URLQueryItem] = [
             URLQueryItem(name: "project_id", value: config.projectId),
             URLQueryItem(name: "project_token", value: config.projectToken)
         ]
+        if let shortLink = shortLink, !shortLink.isEmpty {
+            items.append(URLQueryItem(name: "shortlink", value: shortLink))
+        }
+        components?.queryItems = items
         return components?.url
     }
     

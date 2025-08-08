@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "InhouseTrackingSDK"
-  spec.version      = "1.0.4"
+  spec.version      = "1.0.5"
   spec.summary      = "A comprehensive iOS SDK for tracking app installs, sessions, and user interactions with shortlinks and deep links."
   spec.description  = <<-DESC
     InhouseTrackingSDK is a powerful iOS SDK that provides comprehensive tracking capabilities for app installs, sessions, and user interactions with shortlinks and deep links. It supports automatic deep link detection, event tracking, device information collection, and seamless integration with React Native and Flutter.
