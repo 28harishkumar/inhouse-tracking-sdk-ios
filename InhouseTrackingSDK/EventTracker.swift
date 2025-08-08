@@ -92,7 +92,7 @@ import os.log
     ) -> Event {
         logger.debug("createEvent called with eventType=\(eventType), shortLink=\(shortLink ?? "nil"), deepLink=\(deepLink ?? "nil"), additionalData=\(additionalData?.description ?? "nil")")
         
-        var extra: [String: Any] = [:]
+        var extra: [String: String] = [:]
         
         // Device info
         extra["device"] = UIDevice.current.name

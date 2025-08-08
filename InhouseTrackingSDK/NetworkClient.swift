@@ -39,7 +39,7 @@ import os.log
             request.setValue("InhouseTrackingSDK/1.0", forHTTPHeaderField: "User-Agent")
             request.httpBody = jsonData
             
-            logger.debug("Sending event to \(url.absoluteString) with body: \(jsonString)")
+            logger.debug("HTTP Request → METHOD=POST URL=\(url.absoluteString) HEADERS=\(request.allHTTPHeaderFields ?? [:]) BODY=\(jsonString)")
             
             let task = session.dataTask(with: request) { [weak self] data, response, error in
                 guard let self = self else { return }
@@ -51,7 +51,8 @@ import os.log
                 }
                 
                 let responseString = String(data: data ?? Data(), encoding: .utf8) ?? "{}"
-                self.logger.debug("Received response: \(responseString) with code: \((response as? HTTPURLResponse)?.statusCode ?? 0)")
+                let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
+                self.logger.debug("HTTP Response ← STATUS=\(statusCode) BODY=\(responseString)")
                 
                 if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
                     if self.config.enableDebugLogging {
@@ -59,7 +60,7 @@ import os.log
                     }
                     completion(responseString)
                 } else {
-                    self.logger.error("Failed to send event: \((response as? HTTPURLResponse)?.statusCode ?? 0)")
+                    self.logger.error("Failed to send event: \(statusCode)")
                     completion(responseString)
                 }
             }
@@ -86,7 +87,7 @@ import os.log
         var request = URLRequest(url: url)
         request.setValue("InhouseTrackingSDK/1.0", forHTTPHeaderField: "User-Agent")
         
-        logger.debug("Requesting install data from \(url.absoluteString)")
+        logger.debug("HTTP Request → METHOD=GET URL=\(url.absoluteString) HEADERS=\(request.allHTTPHeaderFields ?? [:])")
         
         let task = session.dataTask(with: request) { [weak self] data, response, error in
             guard let self = self else { return }
@@ -97,12 +98,13 @@ import os.log
                 return
             }
             
+            let responseString = String(data: data ?? Data(), encoding: .utf8) ?? "{}"
+            let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
+            self.logger.debug("HTTP Response ← STATUS=\(statusCode) BODY=\(responseString)")
+            
             if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200,
                let data = data {
                 do {
-                    let jsonResponse = String(data: data, encoding: .utf8) ?? "{}"
-                    self.logger.debug("Install data response: \(jsonResponse)")
-                    
                     if let json = try JSONSerialization.jsonObject(with: data) as? [String: String] {
                         completion(json)
                     } else {
@@ -114,7 +116,7 @@ import os.log
                     completion([:])
                 }
             } else {
-                self.logger.error("Failed to get install data: \((response as? HTTPURLResponse)?.statusCode ?? 0)")
+                self.logger.error("Failed to get install data: \(statusCode)")
                 completion([:])
             }
         }

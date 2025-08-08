@@ -40,7 +40,7 @@ import Foundation
     @objc public let timestamp: Int64
     @objc public let deviceId: String
     @objc public let sessionId: String
-    @objc public let extra: [String: Any]?
+    @objc public let extra: [String: String]?
     @objc public let userAgent: String?
     @objc public let ipAddress: String?
     
@@ -67,7 +67,7 @@ import Foundation
         timestamp: Int64 = Int64(Date().timeIntervalSince1970 * 1000),
         deviceId: String,
         sessionId: String,
-        extra: [String: Any]? = nil,
+        extra: [String: String]? = nil,
         userAgent: String? = nil,
         ipAddress: String? = nil
     ) {
@@ -82,54 +82,6 @@ import Foundation
         self.extra = extra
         self.userAgent = userAgent
         self.ipAddress = ipAddress
-        super.init()
-    }
-    
-    // Custom encoding for extra field since it's [String: Any]
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        
-        try container.encode(eventType, forKey: .eventType)
-        try container.encode(projectId, forKey: .projectId)
-        try container.encode(projectToken, forKey: .projectToken)
-        try container.encodeIfPresent(shortLink, forKey: .shortLink)
-        try container.encodeIfPresent(deepLink, forKey: .deepLink)
-        try container.encode(timestamp, forKey: .timestamp)
-        try container.encode(deviceId, forKey: .deviceId)
-        try container.encode(sessionId, forKey: .sessionId)
-        try container.encodeIfPresent(userAgent, forKey: .userAgent)
-        try container.encodeIfPresent(ipAddress, forKey: .ipAddress)
-        
-        // Handle extra field manually
-        if let extra = extra {
-            let extraData = try JSONSerialization.data(withJSONObject: extra)
-            let extraString = String(data: extraData, encoding: .utf8)
-            try container.encodeIfPresent(extraString, forKey: .extra)
-        }
-    }
-    
-    public required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        eventType = try container.decode(String.self, forKey: .eventType)
-        projectId = try container.decode(String.self, forKey: .projectId)
-        projectToken = try container.decode(String.self, forKey: .projectToken)
-        shortLink = try container.decodeIfPresent(String.self, forKey: .shortLink)
-        deepLink = try container.decodeIfPresent(String.self, forKey: .deepLink)
-        timestamp = try container.decode(Int64.self, forKey: .timestamp)
-        deviceId = try container.decode(String.self, forKey: .deviceId)
-        sessionId = try container.decode(String.self, forKey: .sessionId)
-        userAgent = try container.decodeIfPresent(String.self, forKey: .userAgent)
-        ipAddress = try container.decodeIfPresent(String.self, forKey: .ipAddress)
-        
-        // Handle extra field manually
-        if let extraString = try container.decodeIfPresent(String.self, forKey: .extra),
-           let extraData = extraString.data(using: .utf8) {
-            extra = try JSONSerialization.jsonObject(with: extraData) as? [String: Any]
-        } else {
-            extra = nil
-        }
-        
         super.init()
     }
 }
